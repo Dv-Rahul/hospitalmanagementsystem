@@ -1,0 +1,15 @@
+{% extends 'userapp/navbar.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} TTMS {% endblock %}</title>
+</head>
+<body>
+{% csrf_token %}
+
+    {% block content %}
+     <h1 align = "center" style="color: red ;" ><STRONG> <em> GENUINE HOSPITALS WELCOMES YOU  </em> </STRONG> </h1>
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,161 @@
+{% extends 'userapp/navbar.html' %}
+
+{% block content %}
+
+<html lang="en">
+<head>
+
+    <title>Signup Page</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+    <style media="screen">
+        *,
+        *:before,
+        *:after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #080710;
+        }
+
+        .background {
+            width: 430px;
+            height: 520px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+        }
+
+        form {
+            height: 550px;
+            width: 500px;
+            background-color: rgba(255, 255, 255, 0.13);
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 60%; /* Adjust the top value as needed */
+            left: 50%;
+            margin-top: 50px; /* Set the margin-top to create space below the navbar */
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 30px;
+        }
+
+        form * {
+            font-family: 'Poppins', sans-serif;
+            color: #000000;
+            letter-spacing: 0.5px;
+            outline: none;
+            border: none;
+        }
+
+        form h3 {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 32px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        input {
+            display: block;
+            height: 30px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.07);
+            border: 2px solid transparent; /* Set a default transparent border */
+            border-radius: 3px;
+            padding: 0 10px;
+            margin-top: 2px;
+            font-size: 12px;
+            font-weight: 300;
+            box-shadow: 0 0 0 transparent; /* Set a default transparent box shadow */
+            transition: border-color 0.3s, box-shadow 0.3s; /* Add transition for smooth effect */
+        }
+
+        input:focus {
+            border-color: #23a2f6; /* Change the color as desired */
+            box-shadow: 0 0 5px rgba(35, 162, 246, 0.7); /* Change the color and intensity as desired */
+        }
+
+        ::placeholder {
+            color: #a0a0a0; /* Change the color of the placeholder text */
+        }
+
+        button {
+            margin-top: 10px;
+            width: 100%;
+            background-color: #fffff;
+            color: #080710;
+            padding: 10px 0;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .social {
+            margin-top: 20px;
+            display: flex;
+        }
+
+        .social div {
+            background: red;
+            width: 150px;
+            border-radius: 3px;
+            padding: 5px 10px 10px 5px;
+            background-color: rgba(255, 255, 255, 0.27);
+            color: #eaf0fb;
+            text-align: center;
+        }
+
+        .social div:hover {
+            background-color: rgba(255, 255, 255, 0.47);
+        }
+
+        .social .fb {
+            margin-left: 25px;
+        }
+
+        .social i {
+            margin-right: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form action="{% url 'loginurl' %}" method="post">
+        {% csrf_token %}
+        <h3>LOGIN HERE</h3>
+        <label for="username">Username</label>
+        <input type="text" placeholder="Username" name="username" id="username">
+
+        <label for="password1">Password</label>
+        <input type="password" placeholder="Password" id="password1" name="password1">
+
+
+        <button type="button" class="btn btn-danger mx-0">
+            <a href="{% url 'home' %}" style="color: white; text-decoration: none;">
+                Login
+            </a>
+        </button>
+
+    </form>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'userapp/navbar.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Page</title>
+    <style>
+        /* Add any additional styles as needed */
+        body {
+            background-color: #f8f9fa; /* Example background color */
+        }
+        .emergency-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .emergency-message {
+            color: red;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .emergency-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #dc3545; /* Bootstrap's danger color */
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    {% block content %}
+        <div class="container emergency-container">
+           <img src="{% static 'emerimg.jpg' %}">
+            <h1 class="emergency-message">Emergency Alert!</h1>
+            <p>This is the emergency page content. Provide relevant information and instructions for users during emergencies.</p>
+
+            <a href="{% url 'emergencyurl' %}" class="btn btn-danger emergency-button">Get Help Now</a>
+        </div>
+    {% endblock %}
+</body>
+</html>
